@@ -13,6 +13,7 @@ var flash = require('connect-flash');
 
 var app = express();
 
+// session configuration
 app.use(session({
     secret: settings.cookieSecret,
     key: settings.db, // cookie name
@@ -23,6 +24,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -37,6 +39,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 routes(app);
+
+// files uploading configuration
+// app.use(multer({
+//   dest: 'images/',
+//   rename: function (fieldname, filename) {
+//     return filename;
+//   }
+// }).array('blogImage', 5));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

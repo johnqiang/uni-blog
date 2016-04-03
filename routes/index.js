@@ -1,8 +1,24 @@
-var express = require('express');
-var router = express.Router();
-var crypto = require('crypto'),
-User = require('../models/user.js');
-Post = require('../models/post.js');
+var express = require('express'),
+	router = express.Router(),
+	crypto = require('crypto'),
+	User = require('../models/user.js'),
+	Post = require('../models/post.js'),
+	multer = require('multer');
+// multer configuration (Notice: API Document changed!)
+var storage = multer.diskStorage({
+destination: function (req, file, cb) {
+    cb(null, './public/images/')
+},
+filename: function (req, file, cb) {
+    cb(null, file.originalname)
+}
+})
+var upload = multer({ storage: storage }).array('blogImage', 5);
+// var upload = multer({
+// 		dest: './public/images/',
+// 		rename: function (fieldname, filename) {
+// 			return filename;
+// 		}}).array('blogImage', 5);
 
 /* GET home page. */
 
@@ -131,6 +147,29 @@ module.exports = function(app) {
 			req.flash('success', '发布成功！');
 			return res.redirect('/');//发表成功跳转到主页
 		})
+	});
+
+	app.get('/upload', checkLogin);
+	app.get('/upload', function (req, res) {
+		res.render('upload', {
+			title: '文件上传',
+			user: req.session.user,
+			success: req.flash('success').toString(),
+			error: req.flash('error').toString()
+		});
+	});
+
+	app.post('/upload', checkLogin);
+	app.post('/upload', function (req, res) {
+		upload(req, res, function (err) {
+			if (err) {
+				req.flash('error', err.message);
+				return res.redirect('/upload');
+			}
+			req.flash('success', '文件上传成功!');
+			res.redirect('/upload');
+		})
+		
 	});
 
 	app.get('/logout', checkLogin);
