@@ -1,5 +1,17 @@
 var mongodb = require('./db'),
-	markdown = require('markdown').markdown;
+	marked = require('marked');
+
+// setting markdown module with default values
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: true,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: false
+});
 
 function Post(name, title, post) {
 	this.name = name;
@@ -78,7 +90,7 @@ Post.get = function(name, callback) {
 				}
 				//解析markdown为html
 				docs.forEach(function (doc) {
-					doc.post = markdown.toHTML(doc.post);
+					doc.post = marked(doc.post);
 				});
 				callback(null, docs);//成功！以数组形式返回查询结果
 			});
