@@ -36,6 +36,8 @@ $ DEBUG=blog:* npm start
 
 ## Developer Blogs
 
+- 2016.04.06 Added blog editing function
+
 - 2016.04.04 Added article page and user page, any user can view these pages without login
 
 - 2016.04.03 Added file upload function, replaced deprecated module `markdown` with `marked`
