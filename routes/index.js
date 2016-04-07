@@ -185,8 +185,8 @@ module.exports = function(app) {
 					return res.redirect('/');
 				}
 				res.render('user', {
-					title: user.name,
-					user: req.params.user,
+					title: user.name + "'s blogs",
+					user: req.session.user,
 					posts: posts,
 					success: req.flash('success').toString(),
 					error: req.flash('error').toString()
@@ -245,12 +245,25 @@ module.exports = function(app) {
     	});
     });
 
+    app.get('/delete/:name/:day/:title', checkLogin);
+    app.get('/delete/:name/:day/:title', function (req, res) {
+    	var currentUser = req.session.user;
+    	Post.remove(currentUser.name, req.params.day, 
+    	req.params.title, function (err) {
+    		if (err) {
+    			req.flash('error', err);
+    			return res.redirect('back');
+    		}
+    		req.flash('success', '删除成功！');
+    		return res.redirect('/');
+    	});
+    });
+
 	app.get('/logout', checkLogin);
 	app.get('/logout', function (req, res) {
 		req.session.user = null;
 		req.flash('success', '登出成功!');
-		return res.redirect('/currentUser.name, req.params.day,'+
-			'req.params.title, req.body.post,'); //等出成功后跳转到主页
+		return res.redirect('/'); //登出成功后跳转到主页
 	});
 
 	function checkLogin(req, res, next) {

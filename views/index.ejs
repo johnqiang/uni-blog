@@ -1,5 +1,4 @@
     <%- include header %>
-    这是主页
     <% posts.forEach(function (post, index) {%>
     	<p><h2><a href="/article/<%=post.name%>/<%=post.time.day%>/<%=post.title%>"><%= post.title%></a></h2></p>
     	<p class="info">
