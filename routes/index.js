@@ -3,7 +3,8 @@ var express = require('express'),
 	crypto = require('crypto'),
 	User = require('../models/user.js'),
 	Post = require('../models/post.js'),
-	multer = require('multer');
+	multer = require('multer'),
+	Comment = require('../models/comment.js');
 // multer configuration (Notice: API Document changed!)
 var storage = multer.diskStorage({
 destination: function (req, file, cb) {
@@ -161,7 +162,7 @@ module.exports = function(app) {
 
 	app.post('/upload', checkLogin);
 	app.post('/upload', function (req, res) {
-		upload(req, res, function (err) {
+		Post.upload(req, res, function (err) {
 			if (err) {
 				req.flash('error', err.message);
 				return res.redirect('/upload');
@@ -256,6 +257,29 @@ module.exports = function(app) {
     		}
     		req.flash('success', '删除成功！');
     		return res.redirect('/');
+    	});
+    });
+
+    app.post('/comment/:name/:day/:title', checkLogin);
+    app.post('/comment/:name/:day/:title', function (req, res) {
+    	var date = new Date(),
+      		time = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + 
+             date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes());
+        var comment = {
+            name: req.body.name,
+            email: req.body.email,
+            website: req.body.website,
+            time: time,
+            content: req.body.content
+        };
+        var newComment = new Comment(req.params.name, req.params.day, req.params.title, comment);
+    	newComment.save(function (err) {
+    		if (err) {
+    			req.flash('error', err);
+    			return res.redirect('back');
+    		}
+    		req.flash('success', '评论成功');
+    		res.redirect('back');
     	});
     });
 
