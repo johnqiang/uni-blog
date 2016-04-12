@@ -187,7 +187,7 @@ module.exports = function(app) {
 				return res.redirect('/');
 			}
 			//查询并返回该用户第 page 页的 10 篇文章
-			Post.getTen(req.params.name, page, function (err, posts) {
+			Post.getTen(req.params.name, page, function (err, posts, total) {
 				if (err) {
 					req.flash('error', err);
 					return res.redirect('/');
@@ -291,6 +291,22 @@ module.exports = function(app) {
     		req.flash('success', '评论成功');
     		res.redirect('back');
     	});
+    });
+
+    app.get('/archive', function (req, res) {
+      Post.getArchive(function (err, posts) {
+        if (err) {
+          req.flash('error', err); 
+          return res.redirect('/');
+        }
+        res.render('archive', {
+          title: '存档',
+          posts: posts,
+          user: req.session.user,
+          success: req.flash('success').toString(),
+          error: req.flash('error').toString()
+        });
+      });
     });
 
 	app.get('/logout', checkLogin);

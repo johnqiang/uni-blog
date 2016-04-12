@@ -36,6 +36,8 @@ $ DEBUG=blog:* npm start
 
 ## Developer Blogs
 
+- 2016.04.12 Archived blogs
+
 - 2016.04.11 Added pagination for main page and user page
 
 - 2016.04.09 User can leave comments for a blog
