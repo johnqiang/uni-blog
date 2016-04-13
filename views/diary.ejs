@@ -1,0 +1,32 @@
+<%- include header%>
+	<h1>Keep your life everyday</h1>
+	<form method="post" action="/diary">
+    标题:		<input type="text" name="title"/><br />
+    随笔:		<textarea name="post" rows="5" cols="80"></textarea><br />
+    天气:    	<select name="weather">
+    				<option value="5">☀️</option>
+    				<option value="4">☀️☁️</option>
+    				<option value="3">☁️</option>
+    				<option value="2">☔️</option>
+    				<option value="1">❄️</option>
+    			</select><br>
+    心情:    	<select name="mood">
+    				<option value='5'>😄</option>
+    				<option value='4'>😊</option>
+    				<option value='3'>😐</option>
+    				<option value='2'>😔</option>
+    				<option value='1'>😠</option>
+    			</select><br />
+    运动时常: 	<input type="text" name="exercise" placeholder="请输入时常(min):" /><br />
+    工作效率: 	<select name="efficiency">
+    				<option value="5">狂魔</option>
+    				<option value="4">达人</option>
+    				<option value="3">按部就班</option>
+    				<option value="2">松散</option>
+    				<option value="1">崩溃</option>
+    			</select><br />
+    刷题个数: 	<input type="text" name="leetcode" placeholder="请输入数量" /><br />
+    喝水杯数: 	<input type="text" name="water" placeholder="请输入数量"/><br />
+           		<input type="submit" value="提交"/>
+    </form>
+<%- include footer%>

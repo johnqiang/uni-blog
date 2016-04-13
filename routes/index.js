@@ -4,7 +4,8 @@ var express = require('express'),
 	User = require('../models/user.js'),
 	Post = require('../models/post.js'),
 	multer = require('multer'),
-	Comment = require('../models/comment.js');
+	Comment = require('../models/comment.js'),
+	Diary = require('../models/diary.js');
 // multer configuration (Notice: API Document changed!)
 var storage = multer.diskStorage({
 destination: function (req, file, cb) {
@@ -141,7 +142,7 @@ module.exports = function(app) {
 	    });
 	});
 
-	app.get('/post', checkLogin);
+	app.post('/post', checkLogin);
 	app.post('/post', function (req, res) {
 		var currentUser = req.session.user,
 			post = new Post(currentUser.name, req.body.title, req.body.post);
@@ -308,6 +309,67 @@ module.exports = function(app) {
         });
       });
     });
+
+    app.get('/diary', checkLogin);
+    app.get('/diary', function (req, res) {
+    	res.render('diary', {
+    		title: 'KEEP',
+            user: req.session.user,
+            success: req.flash('success').toString(),
+            error: req.flash('error').toString()
+    	})
+    })
+
+    app.post('/diary', checkLogin);
+    app.post('/diary', function (req, res) {
+    	var currentUser = req.session.user,
+			diary = new Diary(currentUser.name, req.body.title, 
+				req.body.post, req.body.weather, req.body.mood,
+				req.body.exercise, req.body.efficiency, req.body.leetcode, 
+				req.body.water);
+		diary.save(function(err) {
+			if (err) {
+				req.flash('error', err);
+				return res.redirect('back');
+			}
+			req.flash('success', '发布成功！');
+			return res.redirect('/chart');//发表成功跳转到日记页面
+		})
+    })
+
+    app.get('/chart', checkLogin);
+    app.get('/chart', function (req, res) {
+    	Diary.plot(function (err, docs) {
+    		var dates = [], weather = [], mood = [], 
+    		efficiency = [], leetcode = [], water = [], exercises = [];
+    		docs.forEach(function(doc) {
+    			dates.push(doc.time.day);
+    			weather.push(doc.weather);
+    			mood.push(doc.mood);
+    			efficiency.push(doc.efficiency);
+    			leetcode.push(doc.leetcode);
+    			water.push(doc.water);
+    			exercises.push(doc.exercise);
+    		})
+    		if (err) {
+    			req.flash('error', err);
+    			return res.redirect('back');
+    		}
+    		res.render('chart', {
+    			title: 'chart',
+    			user: req.session.user,
+    			dates: dates,
+    			weather: weather,
+    			mood: mood,
+    			efficiency: efficiency,
+    			leetcode: leetcode,
+    			water: water,
+    			exercises: exercises,
+    			success: req.flash('success').toString(),
+            	error: req.flash('error').toString()
+    		})
+    	})
+    })
 
 	app.get('/logout', checkLogin);
 	app.get('/logout', function (req, res) {

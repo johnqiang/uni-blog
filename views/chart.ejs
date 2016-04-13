@@ -1,0 +1,176 @@
+<%- include header%>
+<canvas id="weatherChart" width="400" height="400"></canvas>
+<h3>天气变化</h3>
+<canvas id="moodChart" width="400" height="400"></canvas>
+<h3>心情变化</h3>
+<canvas id="efficiencyChart" width="400" height="400"></canvas>
+<h3>工作效率</h3>
+<canvas id="leetcodeChart" width="400" height="400"></canvas>
+<h3>刷题计划</h3>
+<canvas id="waterChart" width="400" height="400"></canvas>
+<h3>杯水计划</h3>
+<canvas id="exerciseChart" width="400" height="400"></canvas>
+<h3>健身图谱</h3>
+<!-- <div id="placeholder"></div> -->
+<script src="/javascripts/Chart.min.js"></script>
+<script src="/javascripts/jquery.min.js"></script>
+<script>
+	var dates = <%- JSON.stringify(dates) %>;
+	var weather = <%- JSON.stringify(weather) %>;
+	var mood = <%- JSON.stringify(mood) %>;
+	var efficiency = <%- JSON.stringify(efficiency) %>;
+	var leetcode = <%- JSON.stringify(leetcode) %>;
+	var water = <%- JSON.stringify(water) %>;
+	var exercises = <%- JSON.stringify(exercises) %>;
+	var data1 = {
+    labels: dates,
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: weather
+        }
+    ]
+};
+	var data2 = {
+    labels: dates,
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: mood
+        }
+    ]
+};
+	var data3 = {
+    labels: dates,
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: efficiency
+        }
+    ]
+};
+	var data4 = {
+    labels: dates,
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: leetcode
+        }
+    ]
+};
+	var data5 = {
+    labels: dates,
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: water
+        }
+    ]
+};
+	var data6 = {
+    labels: dates,
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: exercises
+        }
+    ]
+};
+	var options = {
+    ///Boolean - Whether grid lines are shown across the chart
+    scaleShowGridLines : true,
+
+    //String - Colour of the grid lines
+    scaleGridLineColor : "rgba(0,0,0,.05)",
+
+    //Number - Width of the grid lines
+    scaleGridLineWidth : 1,
+
+    //Boolean - Whether to show horizontal lines (except X axis)
+    scaleShowHorizontalLines: true,
+
+    //Boolean - Whether to show vertical lines (except Y axis)
+    scaleShowVerticalLines: true,
+
+    //Boolean - Whether the line is curved between points
+    bezierCurve : true,
+
+    //Number - Tension of the bezier curve between points
+    bezierCurveTension : 0.4,
+
+    //Boolean - Whether to show a dot for each point
+    pointDot : true,
+
+    //Number - Radius of each point dot in pixels
+    pointDotRadius : 4,
+
+    //Number - Pixel width of point dot stroke
+    pointDotStrokeWidth : 1,
+
+    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+    pointHitDetectionRadius : 20,
+
+    //Boolean - Whether to show a stroke for datasets
+    datasetStroke : true,
+
+    //Number - Pixel width of dataset stroke
+    datasetStrokeWidth : 2,
+
+    //Boolean - Whether to fill the dataset with a colour
+    datasetFill : true,
+};
+
+	$(document).ready(function () {
+		var ctx1 = document.getElementById("weatherChart").getContext("2d");
+		var exerciseChart = new Chart(ctx1).Line(data1, options);
+		var ctx2 = document.getElementById("moodChart").getContext("2d");
+		var exerciseChart = new Chart(ctx2).Line(data2, options);
+		var ctx3 = document.getElementById("efficiencyChart").getContext("2d");
+		var exerciseChart = new Chart(ctx3).Line(data3, options);
+		var ctx4 = document.getElementById("leetcodeChart").getContext("2d");
+		var exerciseChart = new Chart(ctx4).Line(data4, options);
+		var ctx5 = document.getElementById("waterChart").getContext("2d");
+		var exerciseChart = new Chart(ctx5).Line(data5, options);
+		var ctx6 = document.getElementById("exerciseChart").getContext("2d");
+		var exerciseChart = new Chart(ctx6).Line(data6, options);
+        // var legend = exerciseChart.generateLegend();
+        // $('#placeholder').append(legend1);
+	});
+</script>
+<%- include footer%>
