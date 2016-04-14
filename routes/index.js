@@ -422,6 +422,15 @@ module.exports = function(app) {
     	})
     })
 
+    app.get('/links', function (req, res) {
+		res.render('link', {
+			title: '友情链接',
+			user: req.session.user,
+			success: req.flash('success').toString(),
+			error: req.flash('error').toString()
+		})
+    })
+
 	app.get('/logout', checkLogin);
 	app.get('/logout', function (req, res) {
 		req.session.user = null;
