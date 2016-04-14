@@ -312,7 +312,7 @@ Post.getTag = function(tag, callback) {
 			//查询所有 tags 数组内包含 tag 的文档
           	//并返回只含有 name、time、title 组成的数组
 			collection.find({
-				'tags': tag
+				"tags": tag
 			}, {
 				"name": 1,
             	"time": 1,
@@ -328,4 +328,35 @@ Post.getTag = function(tag, callback) {
 			});
 		});
 	});
+}
+//返回通过标题关键字查询的所有文章信息
+Post.search= function(keyword, callback) {
+	// open mongodb
+	mongodb.open(function (err, db) {
+		if (err) {
+			return callback(err);
+		}
+		db.collection('posts', function (err, collection) {
+			if (err) {
+				mongodb.close();
+				return callback(err);
+			}
+			var pattern = new RegExp(keyword, "i");
+			collection.find({
+				"title": pattern
+			}, {
+				"name": 1,
+				"time": 1,
+				"title": 1
+			}).sort({
+				time: -1
+			}).toArray(function (err, docs) {
+				mongodb.close();
+				if (err) {
+					return callback(err);
+				}
+				callback(null, docs);
+			})
+		})
+	})
 }
