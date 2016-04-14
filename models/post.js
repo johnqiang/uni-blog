@@ -41,7 +41,9 @@ Post.prototype.save = function(callback) {
 		title: this.title.trim(),
 		tags: this.tags,
 		post: this.post,
-		comments: []
+		comments: [],
+		pv: 0,
+		ip: '' // pv: prevent page refreshing from same ip
 	}
 	//打开数据库
 	mongodb.open(function (err, db) {
@@ -109,7 +111,7 @@ Post.getTen = function(name, page, callback) {
 	});
 };
 //读取所选文章详情
-Post.getOne = function(name, day, title, callback) {
+Post.getOne = function(name, day, title, ip, callback) {
 	//打开数据库
 	mongodb.open(function (err, db) {
 		if (err) {
@@ -127,18 +129,33 @@ Post.getOne = function(name, day, title, callback) {
 				"time.day": day,
 				"title": title
 			}, function (err, doc) {
-				mongodb.close();
 				if (err) {
+					mongodb.close();
 					return callback(err);
 				}
-				//解析 markdown 为 html
 				if (doc) {
+					if (ip != doc.ip){
+						collection.updateOne({
+							"name": name,
+							"time.day": day,
+							"title": title
+						}, {
+							$inc: {"pv": 1},
+							$set: {"ip": ip}
+						}, function(err, result) {
+							mongodb.close();
+							if (err) {
+								return callback(err);
+							}
+						});
+					}
+					//解析 markdown 为 html
 					doc.post = marked(doc.post);
 					doc.comments.forEach(function(comment) {
 						comment.content = marked(comment.content);
 					});
+					callback(null, doc);
 				}
-				callback(null, doc);
 			})
 		});
 	});
