@@ -13,9 +13,10 @@ marked.setOptions({
   smartypants: false
 });
 
-function Post(name, title, post, tags) {
+function Post(name, title, head, post, tags) {
 	this.name = name;
 	this.title = title;
+	this.head = head;
 	this.post = post;
 	this.tags = tags;
 }
@@ -39,6 +40,7 @@ Post.prototype.save = function(callback) {
 		name: this.name,
 		time: time,
 		title: this.title.trim(),
+		head: this.head,
 		tags: this.tags,
 		post: this.post,
 		comments: [],
