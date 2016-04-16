@@ -36,6 +36,14 @@ $ DEBUG=blog:* npm start
 
 ## Developer Blogs
 
+- 2016.04.16 User can reprinting their favorite articles
+
+- 2016.04.15 Added searching, 404 page
+
+- 2016.04.14 Added pv and comments statistics
+
+- 2016.04.13 Added tags for blogs
+
 - 2016.04.12 Archived blogs
 
 - 2016.04.11 Added pagination for main page and user page

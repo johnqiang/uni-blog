@@ -431,6 +431,22 @@ module.exports = function(app) {
 		})
     })
 
+    app.get('/reprint/:name/:day/:title', function (req, res) {
+    	var currentUser = req.session.user,
+            reprint_from = {name: req.params.name, day: req.params.day, title: req.params.title},
+            reprint_to = {name: currentUser.name, head: currentUser.head};
+    	Post.reprint(reprint_from, reprint_to, function (err, post) {
+    		if (err) {
+    			console.log(err);
+    			req.flash('error', err);
+    			return res.redirect('back');
+    		}
+    		req.flash('success', '转载成功！');
+    		var url = encodeURI('/article/' + post.name + '/' + post.time.day + '/' + post.title);
+    		res.redirect(url);
+    	})
+    })
+
 	app.get('/logout', checkLogin);
 	app.get('/logout', function (req, res) {
 		req.session.user = null;
