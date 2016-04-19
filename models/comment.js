@@ -1,4 +1,5 @@
-var mongodb = require('./db');
+var mongodb = require('./db'),
+	ObjectID = require('mongodb').ObjectID;
 
 var Comment = function (name, day, title, comment) {
 	this.name = name;
@@ -9,7 +10,7 @@ var Comment = function (name, day, title, comment) {
 
 module.exports = Comment;
 
-Comment.prototype.save = function (callback) {
+Comment.prototype.save = function (id, callback) {
 	var name = this.name,
 		day = this.day,
 		title = this.title,
@@ -27,9 +28,7 @@ Comment.prototype.save = function (callback) {
 			}
 			//通过用户名、时间及标题查找文档，并把一条留言对象添加到该文档的 comments 数组里
 			collection.updateOne({
-				"name": name,
-				"time.day": day,
-				"title": title
+				"_id": new ObjectID(id)
 			}, {
 				$push: {"comments": comment}
 			}, function (err) {

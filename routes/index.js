@@ -109,7 +109,7 @@ module.exports = function(app) {
 	    });
 	});
 
-	app.get('/login', checkNotLogin);
+	app.post('/login', checkNotLogin);
 	app.post('/login', function (req, res) {
 		// 生成密码的md5值
 		var md5 = crypto.createHash('md5'),
@@ -127,8 +127,8 @@ module.exports = function(app) {
 			}
 			// 用户名密码都匹配后，将用户信息存入session
 			req.session.user = user;
-			req.flash('success', '登录成功!')
-			return res.redirect('/'); //登录成功后跳转到主页
+			req.flash('success', '登录成功!');
+			return res.redirect(req.session.returnTo || '/'); //登录成功后跳转到主页
 		})
 	});
 
@@ -208,15 +208,16 @@ module.exports = function(app) {
 		})
 	})
 
-	app.get('/article/:name/:day/:title', function (req, res) {
+	app.get('/article/:id', function (req, res) {
+		req.session.returnTo = req.path;
 		var ip = req.connection.remoteAddress; // pv: prevent page refreshing from same ip
-		Post.getOne(req.params.name, req.params.day, req.params.title, ip, function (err, post) {
+		Post.getOne(req.params.id, ip, function (err, post) {
 			if (err) {
 				req.flash('error', err);
 				return res.redirect('/');
 			}
 			res.render('article', {
-				title: req.params.title,
+				title: post.title,
 				post: post,
 				user: req.session.user,
 				success: req.flash('success').toString(),
@@ -225,11 +226,10 @@ module.exports = function(app) {
 		})
 	})
 
-	app.get('/edit/:name/:day/:title', checkLogin);
-	app.get('/edit/:name/:day/:title', function (req, res) {
+	app.get('/edit/:id', checkLogin);
+	app.get('/edit/:id', function (req, res) {
 		var currentUser = req.session.user;
-		Post.edit(currentUser.name, req.params.day, 
-		req.params.title, function (err, post) {
+		Post.edit(req.params.id, function (err, post) {
 			if (err) {
 				req.flash('error', err);
 				return res.redirect('back');
@@ -244,12 +244,11 @@ module.exports = function(app) {
 		});
 	});
 
-	app.post('/edit/:name/:day/:title', checkLogin);
-    app.post('/edit/:name/:day/:title', function (req, res) {
+	app.post('/edit/:id', checkLogin);
+    app.post('/edit/:id', function (req, res) {
     	var currentUser = req.session.user;
-    	Post.update(currentUser.name, req.params.day, 
-    	req.params.title, req.body.post, function (err) {
-    		var url = encodeURI('/article/' + req.params.name + '/' + req.params.day + '/' + req.params.title);
+    	Post.update(req.params.id, req.body.post, function (err) {
+    		var url = encodeURI('/article/' + req.params.id);
     		if (err) {
     			req.flash('error', err);
     			return res.redirect(url); //出错，返回文章首页
@@ -259,11 +258,10 @@ module.exports = function(app) {
     	});
     });
 
-    app.get('/delete/:name/:day/:title', checkLogin);
-    app.get('/delete/:name/:day/:title', function (req, res) {
+    app.get('/remove/:id', checkLogin);
+    app.get('/remove/:id', function (req, res) {
     	var currentUser = req.session.user;
-    	Post.remove(currentUser.name, req.params.day, 
-    	req.params.title, function (err) {
+    	Post.remove(req.params.id, function (err) {
     		if (err) {
     			req.flash('error', err);
     			return res.redirect('back');
@@ -274,7 +272,7 @@ module.exports = function(app) {
     });
 
     // app.post('/comment/:name/:day/:title', checkLogin);
-    app.post('/comment/:name/:day/:title', function (req, res) {
+    app.post('/comment/:id', function (req, res) {
     	var date = new Date(),
       		time = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + 
              date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes());
@@ -286,7 +284,7 @@ module.exports = function(app) {
             content: req.body.content
         };
         var newComment = new Comment(req.params.name, req.params.day, req.params.title, comment);
-    	newComment.save(function (err) {
+    	newComment.save(req.params.id, function (err) {
     		if (err) {
     			req.flash('error', err);
     			return res.redirect('back');
@@ -430,9 +428,9 @@ module.exports = function(app) {
 		})
     })
 
-    app.get('/reprint/:name/:day/:title', function (req, res) {
+    app.get('/reprint/:id', function (req, res) {
     	var currentUser = req.session.user,
-            reprint_from = {name: req.params.name, day: req.params.day, title: req.params.title},
+            reprint_from = {id: req.params.id},
             reprint_to = {name: currentUser.name, head: currentUser.head};
     	Post.reprint(reprint_from, reprint_to, function (err, post) {
     		if (err) {
@@ -440,7 +438,7 @@ module.exports = function(app) {
     			return res.redirect('back');
     		}
     		req.flash('success', '转载成功！');
-    		var url = encodeURI('/article/' + post.name + '/' + post.time.day + '/' + post.title);
+    		var url = encodeURI('/article/' + post._id);
     		res.redirect(url);
     	})
     })
@@ -448,6 +446,7 @@ module.exports = function(app) {
 	app.get('/logout', checkLogin);
 	app.get('/logout', function (req, res) {
 		req.session.user = null;
+		req.session.returnTo = null;
 		req.flash('success', '登出成功!');
 		return res.redirect('/'); //登出成功后跳转到主页
 	});

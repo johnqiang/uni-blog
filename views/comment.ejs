@@ -1,11 +1,8 @@
 
 <section class="comments">
-<form method="POST" action="/comment/<%=post.name%>/<%=post.time.day%>/<%=post.title%>">
-	<% if (user) { %>
-      姓名：<input type="text" name="name" value="<%= user.name %>" /><br />
-      邮箱：<input type="text" name="email" value="<%= user.email %>" /><br />
-      网址：<input type="text" name="website" value="/user/<%= user.name %>" /><br />
-    <% } else { %>
+<form method="POST" action="/comment/<%=post._id%>">
+	<% if (!user) { %>
+      <p>游客请输入如下信息或选择<a href="/reg">注册</a>／<a href="/login">登录</a></p>
       姓名：<input type="text" name="name" /><br />
       邮箱：<input type="text" name="email" /><br />
       网址：<input type="text" name="website" value="http://" /><br />
