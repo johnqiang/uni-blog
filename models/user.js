@@ -1,5 +1,6 @@
 var mongodb = require('./db');
 var crypto = require('crypto');
+var async = require('async');
 
     function User(user) {
       this.name = user.name;
@@ -23,53 +24,58 @@ var crypto = require('crypto');
           head: head
       };
       //打开数据库
-      mongodb.open(function (err, db) {
-        if (err) {
-          return callback(err);//错误，返回 err 信息
-        }
+      async.waterfall([
+        function (callback) {
+          mongodb.open(function(err, db) {
+            callback(err, db);
+          });
+        },
         //读取 users 集合
-        db.collection('users', function (err, collection) {
-          if (err) {
-            mongodb.close();
-            return callback(err);//错误，返回 err 信息
-          }
-          //将用户数据插入 users 集合
+        function (db, callback) {
+          db.collection('users', function (err, collection) {
+            callback(err, collection);
+          });
+        },
+        //将用户数据插入 users 集合
+        function (collection, callback) {
           collection.insert(user, {
             safe: true
           }, function (err, user) {
-            mongodb.close();
-            if (err) {
-              return callback(err);//错误，返回 err 信息
-            }
-            callback(null, user[0]);//成功！err 为 null，并返回存储后的用户文档
+            callback(err, user[0]);
           });
-        });
+        }
+      ], function (err, user) {
+        mongodb.close();
+        callback(err, user[0]);
       });
     };
 
     //读取用户信息
     User.get = function(name, callback) {
-      //打开数据库
-      mongodb.open(function (err, db) {
-        if (err) {
-          return callback(err);//错误，返回 err 信息
-        }
+      async.waterfall([
+        //打开数据库
+        function (callback) {
+          mongodb.open(function (err, db) {
+            callback(err, db);
+          });
+        },
         //读取 users 集合
-        db.collection('users', function (err, collection) {
-          if (err) {
-            mongodb.close();
-            return callback(err);//错误，返回 err 信息
-          }
-          //查找用户名（name键）值为 name 一个文档
+        function (db, callback) {
+          db.collection('users', function (err, collection) {
+            callback(err, collection);
+          });
+        },
+        //查找用户名（name键）值为 name 一个文档
+        function (collection, callback) {
           collection.findOne({
             name: name
           }, function (err, user) {
-            mongodb.close();
-            if (err) {
-              return callback(err);//失败！返回 err 信息
-            }
-            callback(null, user);//成功！返回查询的用户信息
-          });
-        });
-      });
+            callback(err, user);
+          })
+        }
+        ], function (err, user) {
+          mongodb.close();
+          callback(err, user);
+        }
+      );
     };

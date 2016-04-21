@@ -18,6 +18,7 @@
     "connect-mongo": "*",
     "marked": "*",
     "connect-flash": "0.1.1",
-    "multer": "1.1.0"
+    "multer": "1.1.0",
+    "async": "*"
   }
 }
