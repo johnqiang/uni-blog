@@ -1,6 +1,7 @@
 var mongodb = require('./db'),
 	marked = require('marked'),
-	ObjectID = require('mongodb').ObjectID;
+	ObjectID = require('mongodb').ObjectID,
+	async = require('async');
 
 // setting markdown module with default values
 marked.setOptions({
@@ -49,94 +50,96 @@ Post.prototype.save = function(callback) {
 		pv: 0,
 		ip: '' // pv: prevent page refreshing from same ip
 	}
-	//打开数据库
-	mongodb.open(function (err, db) {
-		if (err) {
-			return callback(err);
-		}
+	async.waterfall([
+		//打开数据库
+		function (callback) {
+			mongodb.open(function (err, db) {
+				callback(err, db);
+			});
+		},
 		//读取posts集合
-		 db.collection('posts', function (err, collection) {
-		 	if (err) {
-		 		return callback(err);
-		 	}
-		 	//将文档插入posts集合
-		 	collection.insert(post, {
-		 		safe: true
-		 	}, function (err) {
-		 		mongodb.close();
-		 		if (err) {
-		 			return callback(err);//失败，返回err
-		 		}
-		 		callback(null);//返回err为null
-		 	});
-		 });
-	});
+		function (db, callback) {
+			db.collection('posts', function (err, collection) {
+				callback(err, collection);
+			});
+		},
+		//将文档插入posts集合
+		function (collection, callback) {
+			collection.insert(post, {
+				safe: true
+			}, function (err) {
+				callback(err);
+			})
+		}
+	], function (err) {
+		mongodb.close();
+		callback(err);
+	})
 };
 //读取文章及其相关信息
 Post.getTen = function(name, page, callback) {
-	//打开数据库
-	mongodb.open(function (err, db) {
-		if (err) {
-			return callback(err);
-		}
-		
-		db.collection('posts', function(err, collection) {
-			if (err) {
-				mongodb.close();
-				return callback(err);
-			}
+	async.waterfall([
+		function (callback) {
+			mongodb.open(function(err, db) {
+				callback(err, db);
+			});
+		},
+		function (db, callback) {
+			db.collection('posts', function (err, collection) {
+				callback(err, collection);
+			});
+		},
+		//使用count, 返回文档总数total
+		function (collection, callback) {
 			var query = {}; //根据query对象查询文章
 			if (name) {
 				query.name = name;
 			}
-			//使用count, 返回文档总数total
-			collection.count(query, function (err, total) { 
-				collection.find(query, {
-	              skip: (page - 1)*10,
-	              limit: 10
-	            }).sort({
-					time: -1
-				}).toArray(function (err, docs) {
-					mongodb.close();
-					if (err) {
-						return callback(err);//失败，返回err
-					}
-					//解析markdown为html
-					docs.forEach(function (doc) {
-						doc.post = marked(doc.post);
-						doc.comments.forEach(function (comment) {
-							comment.content = marked(comment.content);
-						});
-					});
-					callback(null, docs, total);//成功！以数组形式返回查询结果
-				});
+			collection.count(query, function (err, total) {
+				callback(err, query, total, collection);
+			});
+		},
+		function (query, total, collection, callback) {
+			collection.find(query, {
+				skip: (page-1)*10,
+				limit: 10
+			}).sort({
+				time: -1
+			}).toArray(function (err, docs) {
+				callback(err, docs, total);
+			});
+		}
+	], function (err, docs, total) {
+		mongodb.close();
+		//解析markdown为html
+		docs.forEach(function (doc) {
+			doc.post = marked(doc.post);
+			doc.comments.forEach(function (comment) {
+				comment.content = marked(comment.content);
 			});
 		});
-	});
+		callback(err, docs, total);
+	})
 };
 //读取所选文章详情
 Post.getOne = function(id, ip, callback) {
-	//打开数据库
-	mongodb.open(function (err, db) {
-		if (err) {
-			return callback(err);
-		}
-		//读取posts集合
-		db.collection('posts', function(err, collection) {
-			if (err) {
-				mongodb.close();
-				return callback(err);
-			}
-			//根据用户名、发表日期及文章名进行查询
+	async.waterfall([
+		function (callback) {
+			mongodb.open(function (err, db) {
+				callback(err, db);
+			});
+		},
+		function (db, callback) {
+			db.collection('posts', function (err, collection) {
+				callback(err, collection);
+			});
+		},
+		function (collection, callback) {
 			collection.findOne({
 				"_id": new ObjectID(id)
 			}, function (err, doc) {
-				if (err) {
-					mongodb.close();
-					return callback(err);
-				}
 				if (doc) {
-					if (ip != doc.ip){
+					if (ip != doc.ip) {
 						collection.updateOne({
 							"_id": new ObjectID(id)
 						}, {
@@ -149,16 +152,18 @@ Post.getOne = function(id, ip, callback) {
 							}
 						});
 					}
-					//解析 markdown 为 html
-					doc.post = marked(doc.post);
-					doc.comments.forEach(function(comment) {
-						comment.content = marked(comment.content);
-					});
-					callback(null, doc);
+					callback(err, doc);
 				}
 			})
+		}
+	], function (err, doc) {
+		//解析 markdown 为 html
+		doc.post = marked(doc.post);
+		doc.comments.forEach(function(comment) {
+			comment.content = marked(comment.content);
 		});
-	});
+		callback(err, doc);
+	})
 };
 // 返回文章内容
 Post.edit = function (id, callback) {
