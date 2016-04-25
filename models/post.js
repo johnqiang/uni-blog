@@ -135,10 +135,10 @@ Post.getOne = function(id, ip, callback) {
 			});
 		},
 		function (collection, callback) {
+			console.log(id);
 			collection.findOne({
 				"_id": new ObjectID(id)
 			}, function (err, doc) {
-				callback(err, collection, doc);
 				if (doc) {
 					if (ip != doc.ip) {
 						collection.updateOne({
@@ -147,15 +147,12 @@ Post.getOne = function(id, ip, callback) {
 							$inc: {"pv": 1},
 							$set: {"ip": ip}
 						}, function(err, result) {
-							mongodb.close();
-							if (err) {
-								return callback(err);
-							}
+							callback(err, doc);
 						});
 					}
 					callback(err, doc);
 				}
-			})
+			});
 		}
 	], function (err, doc) {
 		//解析 markdown 为 html
@@ -414,7 +411,7 @@ Post.reprint = function (reprint_from, reprint_to, callback) {
 		},
 		function(collection ,callback){
 			collection.findOne({
-				"_id": new ObjectID(id)
+				"_id": new ObjectID(reprint_from.id)
 			}, function(err, post) {
 				callback(err, collection, post);
 			});
@@ -429,36 +426,39 @@ Post.reprint = function (reprint_from, reprint_to, callback) {
                 minute : date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + 
                 date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes())
             }
+            var re_from = {post_id: reprint_from.id, author: post.name};
             delete post._id; //注意要删掉原来的 _id
             post.name = reprint_to.name;
             post.head = reprint_to.head;
             post.time = time;
             post.title = (post.title.search(/[转载]/) > -1) ? post.title : "[转载]" + post.title;
             post.comments = [];
-            post.reprint_info = {"reprint_from": reprint_from};
+            post.reprint_info = {"reprint_from": re_from};
             post.pv = 0;
             //将转载生成的副本修改后存入数据库，并返回存储后的文档
             collection.insert(post, {
             	safe: true
             }, function(err, posts) {
-            	callback(err, collection, post);
+            	console.log(posts.ops[0]);
+            	callback(err, collection, posts.ops[0]);
             });
 		},
 		function(collection, post, callback) {
 			//更新被转载的原文档的 reprint_info 内的 reprint_to
             collection.update({
-            	"_id": new ObjectID(id)
+            	"_id": new ObjectID(reprint_from.id)
             }, {
             	$push: {
                 "reprint_info.reprint_to": {
-                  "id": post.id
+                  "post_id": post._id,
+                  "author": reprint_to.name
               }}
           	}, function (err) {
-          		callback(err);
+          		callback(err, post);
           	});
 		}
-	], function(err) {
+	], function(err, post) {
 		mongodb.close();
-		callback(err);
+		callback(err, post);
 	})
 }

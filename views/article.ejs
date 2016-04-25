@@ -4,24 +4,28 @@
     <span><a class="edit" href="/edit/<%= post._id %>">编辑</a></span>
     <span><a class="edit" href="/remove/<%= post._id %>">删除</a></span>
   <% } %>
+  <!-- Reprint function detection -->
 	<% var flag = 1 %>
-    <% if (user && (user.name != post.name)) { %>
-      <% if ((post.reprint_info.reprint_from != undefined) && (user.name == post.reprint_info.reprint_from.name)) { %>
-        <% flag = 0 %>
-      <% } %>
-      <% if ((post.reprint_info.reprint_to != undefined)) { %>
-        <% post.reprint_info.reprint_to.forEach(function (reprint_to, index) { %>
-          <% if (user.name == reprint_to.name) { %>
-            <% flag = 0 %>
-          <% } %>
-        <% }) %>
-      <% } %>
-    <% } else { %>
+  <% if (user && (user.name != post.name)) { %>
+    <!-- original author is not allowed to reprint -->
+    <% if ((post.reprint_info.reprint_from != undefined) && (user.name == post.reprint_info.reprint_from.author)) { %>
       <% flag = 0 %>
     <% } %>
-    <% if (flag) { %>
-      <span><a class="edit" href="/reprint/<%= post._id %>">转载</a></span>
+    <!-- already reprinted user is not allowed to reprint -->
+    <% if (post.reprint_info.reprint_to != undefined) { %>
+      <% post.reprint_info.reprint_to.forEach(function (reprint_to, index) { %>
+        <% if (user.name == reprint_to.author) { %>
+          <% flag = 0 %>
+        <% } %>
+      <% }) %>
     <% } %>
+  <% } else { %>
+    <% flag = 0 %>
+  <% } %>
+  <!-- End reprint function detection -->
+  <% if (flag) { %>
+    <span><a class="edit" href="/reprint/<%= post._id %>">转载</a></span>
+  <% } %>
 </p>
 <p class="info">
   作者：<a href="/user/<%= post.name %>"><%= post.name %></a> | 
@@ -33,7 +37,7 @@
         <% } %>
       <% }) %>
   <% if (post.reprint_info.reprint_from) { %>
-    <br><a href="/article/<%= post.reprint_info.reprint_from.name %>/<%= post.reprint_info.reprint_from.day %>/<%= post.reprint_info.reprint_from.title %>">原文链接</a>
+    <br><a href="/article/<%= post.reprint_info.reprint_from.post_id %>">原文链接</a>
   <% } %>
 </p>
 <p><%- post.post %></p>
