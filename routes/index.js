@@ -34,7 +34,7 @@ module.exports = function(app) {
 				posts = [];
 			}
 			res.render('index', { 
-		    	title: '主页', 
+		    	title: 'Main', 
 		    	user: req.session.user,
 		    	page: page,
 		    	isFirstPage: (page - 1) == 0,
