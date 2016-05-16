@@ -1,0 +1,1222 @@
+[Sat Apr 16 2016 12:16:38 GMT-0400 (EDT)] /article/tom/2016-4-16/[%E8%BD%AC%E8%BD%BD]%E6%B5%8B%E8%AF%951
+ReferenceError: /Users/johnson/GitHub/blog/views/article.ejs:23
+    21| </p>
+    22| <p class="info">
+ >> 23|   作者：<a href="/user/<%= post.name %>"><%= age.name %></a> | 
+    24|   日期：<%= post.time.minute %>
+    25|   标签：
+    26|       <% post.tags.forEach(function (tag, index) { %>
+
+age is not defined
+    at eval (eval at <anonymous> (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:464:12), <anonymous>:114:23)
+    at returnedFn (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:493:17)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:350:31)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:218:8
+    at /Users/johnson/GitHub/blog/models/post.js:160:6
+    at handleCallback (/Users/johnson/GitHub/blog/node_modules/mongodb/lib/utils.js:96:12)
+    at /Users/johnson/GitHub/blog/node_modules/mongodb/lib/collection.js:1357:5
+    at handleCallback (/Users/johnson/GitHub/blog/node_modules/mongodb/lib/utils.js:96:12)
+    at /Users/johnson/GitHub/blog/node_modules/mongodb/lib/cursor.js:657:5
+    at handleCallback (/Users/johnson/GitHub/blog/node_modules/mongodb-core/lib/cursor.js:159:5)
+    at nextFunction (/Users/johnson/GitHub/blog/node_modules/mongodb-core/lib/cursor.js:662:5)
+    at /Users/johnson/GitHub/blog/node_modules/mongodb-core/lib/cursor.js:564:7
+[Mon Apr 18 2016 12:13:11 GMT-0400 (EDT)] /article/571256b3328d2060b1a005fb
+ReferenceError: /Users/johnson/GitHub/blog/views/article.ejs:23
+    21| </p>
+    22| <p class="info">
+ >> 23|   作者：<a href="/user/<%= post.name %>"><%= age.name %></a> | 
+    24|   日期：<%= post.time.minute %>
+    25|   标签：
+    26|       <% post.tags.forEach(function (tag, index) { %>
+
+age is not defined
+    at eval (eval at <anonymous> (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:464:12), <anonymous>:114:23)
+    at returnedFn (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:493:17)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:350:31)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:218:8
+    at /Users/johnson/GitHub/blog/models/post.js:157:6
+    at handleCallback (/Users/johnson/GitHub/blog/node_modules/mongodb/lib/utils.js:96:12)
+    at /Users/johnson/GitHub/blog/node_modules/mongodb/lib/collection.js:1357:5
+    at handleCallback (/Users/johnson/GitHub/blog/node_modules/mongodb/lib/utils.js:96:12)
+    at /Users/johnson/GitHub/blog/node_modules/mongodb/lib/cursor.js:657:5
+    at handleCallback (/Users/johnson/GitHub/blog/node_modules/mongodb-core/lib/cursor.js:159:5)
+    at nextFunction (/Users/johnson/GitHub/blog/node_modules/mongodb-core/lib/cursor.js:662:5)
+    at /Users/johnson/GitHub/blog/node_modules/mongodb-core/lib/cursor.js:564:7
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:32:29 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 11:44:45 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:50 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:50 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:50 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:50 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:11:51 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:40 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:40 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 12:12:41 GMT-0400 (EDT)] /login
+Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:344:11)
+    at ServerResponse.header (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:163:12)
+    at done (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:957:10)
+    at View.exports.renderFile [as engine] (/Users/johnson/GitHub/blog/node_modules/ejs/lib/ejs.js:355:10)
+    at View.render (/Users/johnson/GitHub/blog/node_modules/express/lib/view.js:126:8)
+    at tryRender (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:639:10)
+    at EventEmitter.render (/Users/johnson/GitHub/blog/node_modules/express/lib/application.js:591:3)
+    at ServerResponse.render (/Users/johnson/GitHub/blog/node_modules/express/lib/response.js:961:7)
+    at /Users/johnson/GitHub/blog/routes/index.js:104:10
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:330:12)
+[Tue Apr 19 2016 14:33:25 GMT-0400 (EDT)] /article/57153f5f10bbd76317ff54c8
+ReferenceError: request is not defined
+    at /Users/johnson/GitHub/blog/routes/index.js:213:3
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/johnson/GitHub/blog/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/johnson/GitHub/blog/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:277:22
+    at param (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:349:14)
+    at param (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:410:3)
+    at next (/Users/johnson/GitHub/blog/node_modules/express/lib/router/index.js:271:10)
+    at SendStream.error (/Users/johnson/GitHub/blog/node_modules/serve-static/index.js:120:7)
+    at emitOne (events.js:77:13)
+    at SendStream.emit (events.js:169:7)
+    at SendStream.error (/Users/johnson/GitHub/blog/node_modules/send/index.js:245:17)
+    at SendStream.onStatError (/Users/johnson/GitHub/blog/node_modules/send/index.js:356:12)
+    at next (/Users/johnson/GitHub/blog/node_modules/send/index.js:630:16)
