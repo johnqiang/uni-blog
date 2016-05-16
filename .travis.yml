@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - '5'
+  - '4'
+services:
+  - mongodb
+  - elasticsearch
+script:
+  npm start
